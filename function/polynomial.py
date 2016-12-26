@@ -4,7 +4,10 @@ Created on Dec 26, 2016
 @author: Adelina
 '''
 import math
-def citire():
+def read():
+    """
+    reads values for a b c
+    """
     a=int(input("value for a:"))
     b=int(input("value for b:"))
     c=int(input("value for c:"))
@@ -32,4 +35,4 @@ def test_function():
     c=1
     assert function(a,b,c)==(-0.2679491924311228,-3.732050807568877)
 test_function()
-citire()
+read()

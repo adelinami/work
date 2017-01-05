@@ -18,5 +18,7 @@ def test_linear():
     with pytest.raises(NotQuadraticEqException):
         solve_x2(a=0, b=1, c=-1)
 
-
+def test_only_a():
+    (x1, x2,) = solve_x2(1)
+    assert (x1, x2,)==(0.0, 0.0,)
 

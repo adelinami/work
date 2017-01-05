@@ -33,7 +33,7 @@ def solve_x2(a, b=0.0, c=0.0):
     if a==0:
         raise NotQuadraticEqException()
 
-    delta = b^2 - 4*a*c
+    delta = b*b - 4*a*c
 
     if delta < 0:
         raise NoRealSolutionException()

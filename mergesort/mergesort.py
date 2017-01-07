@@ -1,4 +1,6 @@
 
+__all__ = ["merge_sort"]
+
 def merge_sort(a,b,n,m):
     """
     Creates a new ordonated succesion with all elements from two given ordonated series

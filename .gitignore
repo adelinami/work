@@ -1,0 +1,10 @@
+# compiled
+**/*.pyc
+
+# cache
+**/__pycache__
+**/.cache
+
+# vim swap
+**/*.swp
+

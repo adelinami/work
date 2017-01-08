@@ -1,2 +1,1 @@
-# work
-=for html <a href="https://travis-ci.org/adelinami/work"><img src="https://travis-ci.org/adelinami/work.svg?branch=master"></a>
+# work [![Build Status](https://travis-ci.org/adelinami/work.svg?branch=master)](https://travis-ci.org/adelinami/work)

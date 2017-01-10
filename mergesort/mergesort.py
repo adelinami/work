@@ -1,9 +1,14 @@
 
 __all__ = ["merge_sort"]
 
+# FIXME
+# n, m are redundant - you can find them by calling a function on the lists
+# if the list has 1-million-something elements, would you expect the dev to count them?
+# also, the result is skewed if one calls merge_sort([1,2,3], [], 1, 2) ?!
 def merge_sort(a,b,n,m):
     """
     Creates a new ordonated succesion with all elements from two given ordonated series
+    # FIXME 'ordonated'?! = 'sorted'
     
     Args:
         a: the first succesion
@@ -17,6 +22,11 @@ def merge_sort(a,b,n,m):
     c=[]
     i=0
     j=0
+
+    # FIXME
+    # if one of the lists is empty, you're iterating over the second one for nothing
+    # optimize with a ckeck ('pruning') - if one of the lists is empty, return the other one
+
     while i<n and j<m :
         if a[i]<b[j]:
             c.append(a[i])

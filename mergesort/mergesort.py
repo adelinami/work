@@ -15,14 +15,14 @@ def merge_sort(a,b):
     c=[]
     i=0
     j=0
-    n=len(a)
-    m=len(b)
-    if n==0: 
+    a_size=len(a)
+    b_size=len(b)
+    if a_size==0: 
         return b
-    if m==0:
+    if b_size==0:
         return a
     
-    while i<n and j<m :
+    while i<a_size and j<b_size :
         if a[i]<b[j]:
             c.append(a[i])
             i+=1
@@ -31,11 +31,11 @@ def merge_sort(a,b):
             c.append(b[j])
             j+=1
                           
-    if i<len(a):
-        for l in range(i,n):
+    if i<a_size:
+        for l in range(i,a_size):
                 c.append(a[l])
     else:
-        for l in range(j,m):
+        for l in range(j,b_size):
             c.append(b[l])
     return c
 

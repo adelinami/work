@@ -1,20 +1,13 @@
 
 __all__ = ["merge_sort"]
 
-# FIXME
-# n, m are redundant - you can find them by calling a function on the lists
-# if the list has 1-million-something elements, would you expect the dev to count them?
-# also, the result is skewed if one calls merge_sort([1,2,3], [], 1, 2) ?!
-def merge_sort(a,b,n,m):
+def merge_sort(a,b): 
     """
-    Creates a new ordonated succesion with all elements from two given ordonated series
-    # FIXME 'ordonated'?! = 'sorted'
+    Creates a new sorted succesion with all elements from two given sorted series
     
     Args:
         a: the first succesion
         b: the second succesion
-        n: the number of elements in a
-        m: the number of elements in b
     Returns:
         c: the created succesion using merge sort
     """
@@ -22,12 +15,15 @@ def merge_sort(a,b,n,m):
     c=[]
     i=0
     j=0
-
-    # FIXME
-    # if one of the lists is empty, you're iterating over the second one for nothing
-    # optimize with a ckeck ('pruning') - if one of the lists is empty, return the other one
-
-    while i<n and j<m :
+    
+    if len(a)==len(b)==0:
+        return 0
+    if len(a)==0: 
+        return b
+    if len(b)==0:
+        return a
+    
+    while i<len(a) and j<len(b) :
         if a[i]<b[j]:
             c.append(a[i])
             i+=1
@@ -36,11 +32,11 @@ def merge_sort(a,b,n,m):
             c.append(b[j])
             j+=1
                           
-    if i<n:
-        for l in range(i,n):
+    if i<len(a):
+        for l in range(i,len(a)):
                 c.append(a[l])
     else:
-        for l in range(j,m):
+        for l in range(j,len(b)):
             c.append(b[l])
     return c
 
@@ -56,5 +52,5 @@ if __name__ == "__main__":
         x=int(input("add number to b"))
         b.append(x)
          
-    c=merge_sort(a,b,n,m)
+    c=merge_sort(a,b)
     print(c)

@@ -25,7 +25,3 @@ def test_corner_case_b():
 def test_corner_case_both():
     c = merge_sort([], [])
     assert c==[]
-
-# FIXME: good thing above - you checked a corner case - one of the lists is empty
-# ALWAYS check all corner cases - the other list is empty, both are empty
-

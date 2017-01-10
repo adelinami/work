@@ -16,8 +16,6 @@ def merge_sort(a,b):
     i=0
     j=0
     
-    if len(a)==len(b)==0:
-        return c
     if len(a)==0: 
         return b
     if len(b)==0:

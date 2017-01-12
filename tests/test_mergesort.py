@@ -1,6 +1,14 @@
 import pytest
 
-from mergesort import merge_sort
+from mergesort import merge_sort, merge_sort_13
+
+def test_allempty():
+    new_list=[]
+    tuple = [], [], [], [], [], [], [], [], [], [], [], [], []
+    for position in range( 13):
+        new_list=merge_sort_13(new_list,tuple[position])
+        assert new_list==[]
+
 
 
 # tests for 'mergesort'

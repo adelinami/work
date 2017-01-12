@@ -1,7 +1,7 @@
 
 import pytest
 
-from mergesort_for_13_lists import merge_sort
+from mergesort.mergesort_for_13_lists import merge_sort
 
 
 # tests for 'mergesort_for_13_lists'

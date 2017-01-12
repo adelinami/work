@@ -1,7 +1,7 @@
 
-__all__ = ["merge_sort"]
+__all__ = ["merge_sort_13"]
 
-def merge_sort(a,b):
+def merge_sort_13(a,b):
     """
     Creates a new sorted succesion with all elements from two given sorted series
     
@@ -43,6 +43,6 @@ if __name__ == "__main__":
     new_list=[]
     tuple = [1,2], [1,2,3], [1,3,5], [1,6,8], [3,9], [3,4,8], [0], [], [9], [10], [11], [12], [13]
     for position in range( 13):
-        new_list=merge_sort(new_list,tuple[position])
+        new_list=merge_sort_13(new_list,tuple[position])
     print(new_list)
     

@@ -1,7 +1,7 @@
 
-__all__ = ["merge_sort"]
+__all__ = ["merge_sort_13"]
 
-def merge_sort(a,b): 
+def merge_sort_13(a,b):
     """
     Creates a new sorted succesion with all elements from two given sorted series
     
@@ -9,47 +9,40 @@ def merge_sort(a,b):
         a: the first succesion
         b: the second succesion
     Returns:
-        c: the created succesion using merge sort
+        new_list: the created succesion using merge sort
     """
 
-    c=[]
-    i=0
-    j=0
-    a_size=len(a)
-    b_size=len(b)
-    if a_size==0: 
+    new_list=[]
+    pos_a=0 #index for a
+    pos_b=0 #index for b
+
+    if len(a)==0:
         return b
-    if b_size==0:
+    if len(b)==0:
         return a
-    
-    while i<a_size and j<b_size :
-        if a[i]<b[j]:
-            c.append(a[i])
-            i+=1
+    if len(a)==len(b)==0:
+        return new_list
+    while pos_a<len(a) and pos_b<len(b) :
+        if a[pos_a]<b[pos_b]:
+            new_list.append(a[ pos_a])
+            pos_a+=1
                 
         else:
-            c.append(b[j])
-            j+=1
+            new_list.append(b[pos_b])
+            pos_b+=1
                           
-    if i<a_size:
-        for l in range(i,a_size):
-                c.append(a[l])
+    if pos_a<len(a): #if one of the lists is longer than the other
+        for l in range(pos_a,len(a)):
+                new_list.append(a[l])
     else:
-        for l in range(j,b_size):
-            c.append(b[l])
-    return c
+        for l in range(pos_b,len(b)):
+            new_list.append(b[l])
+    return new_list
 
 if __name__ == "__main__":
-    a=[]
-    b=[]
-    n=int(input("number of elements in a -first succesion :"))
-    for i in range (n):
-        x=int(input("add number to a"))
-        a.append(x)
-    m=int(input("number of elements in b -second succesion :"))
-    for i in range (m):
-        x=int(input("add number to b"))
-        b.append(x)
-         
-    c=merge_sort(a,b)
-    print(c)
+    new_list=[]
+    tuple = [1,2], [1,2,3], [1,3,5], [1,6,8], [3,9], [3,4,8], [0], [], [9], [10], [11], [12], [13]
+    for position in range( 13):
+        new_list=merge_sort_13(new_list,tuple[position])
+    print(new_list)
+    

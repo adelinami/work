@@ -1,7 +1,9 @@
 
-__all__ = ["merge_sort_13"]
+__all__ = ["merge_sort"]
 
-def merge_sort_13(a,b):
+
+# Note how this function is 'private' and not exported - its 'internal', not part of the API
+def _merge_sort_2(a,b):
     """
     Creates a new sorted succesion with all elements from two given sorted series
     
@@ -39,10 +41,26 @@ def merge_sort_13(a,b):
             new_list.append(b[l])
     return new_list
 
+
+def merge_sort(o_lists):
+    """
+    Merges sorted lists.
+
+    Args:
+        o_lists: a list of sorted lists
+    Returns:
+        an ordered list containing the elements of the lists passed in
+    """
+
+    res = list()
+    for l in o_lists:
+        res = _merge_sort_2(res, l)
+
+    return res
+
+
 if __name__ == "__main__":
-    new_list=[]
-    tuple = [1,2], [1,2,3], [1,3,5], [1,6,8], [3,9], [3,4,8], [0], [], [9], [10], [11], [12], [13]
-    for position in range( 13):
-        new_list=merge_sort_13(new_list,tuple[position])
-    print(new_list)
-    
+    l = [[1,2,3], [2,5,6], [4,7,9]]
+
+    print(merge_sort(l))
+
